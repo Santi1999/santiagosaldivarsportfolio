@@ -23,7 +23,7 @@ export default defineConfig({
       MY_EMAIL: envField.string({ context: "server", access: "secret" }),
     },
   },
-  output: "server",
+  output: "static",
   adapter: vercel(),
   site: BASE_URL,
   base: "",
