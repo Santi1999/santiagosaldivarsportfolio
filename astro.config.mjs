@@ -26,5 +26,5 @@ export default defineConfig({
   output: "static",
   adapter: vercel(),
   site: BASE_URL,
-  base: "",
+  base: "/santiagosaldivarsportfolio",
 })
