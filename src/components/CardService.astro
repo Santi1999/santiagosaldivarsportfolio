@@ -12,7 +12,7 @@ interface Props {
   service: Service;
 }
 
-const { id, title, benefits, price } = Astro.props.service;
+const { id, title, benefits, price, description } = Astro.props.service;
 ---
 
 <Card className="card-service h-fit">
@@ -20,7 +20,8 @@ const { id, title, benefits, price } = Astro.props.service;
     <h3 class="text-xl text-gray-950 dark:text-gray-100 font-semibold mb-4">
       {title}
     </h3>
-    <p class="font-bold text-2xl text-gray-950 dark:text-white">${price}</p>
+    <p class="text-gray-500 dark:text-gray-300 list-inside list-disc mb-4"> {description}</p>
+    <p class="font-bold text-2xl text-gray-950 dark:text-white">${price}/month</p>
     <ul class="text-gray-600 dark:text-gray-400 list-inside list-disc mb-4">
       {benefits.map((benefit) => <li>{benefit}</li>)}
     </ul>

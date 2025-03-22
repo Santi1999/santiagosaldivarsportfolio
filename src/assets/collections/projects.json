@@ -1,26 +1,26 @@
 [
   {
-    "name": "GotoSend",
-    "description": "E-commerce for selling remittances, mobile recharges and gift cards.",
-    "urlImg": "/projects/gotosend.webp",
-    "link": "https://gotosend.com"
+    "name": "GovGlance",
+    "description": "Centralized official government information across all branches, departments, and agencies. Empowering citizens with access to information.",
+    "urlImg": "/projects/gov_glance.png",
+    "link": "https://govglance.org/"
   },
   {
-    "name": "D-Kanto",
-    "description": "E-commerce website for selling technological products.",
-    "urlImg": "/projects/d-kanto.webp",
-    "link": "https://d-kanto.onrender.com"
+    "name": "SuperSift",
+    "description": "Metasearch engine with AI integration",
+    "urlImg": "/projects/supersift.png",
+    "link": "https://supersift.net/supersift/search"
   },
   {
-    "name": "D-Kanto Admins",
-    "description": "Admin Dashboard for an E-commerce website",
-    "urlImg": "/projects/d-kanto-admin.webp",
-    "link": "https://d-kanto-admin.onrender.com"
+    "name": "TopOff",
+    "description": "Finding cheap gas powered by machine learning",
+    "urlImg": "/projects/topoff_ai.png",
+    "link": "https://topoff.ai"
   },
   {
-    "name": "Amazon Redesign Thinking",
-    "description": "Amazon Clon",
-    "urlImg": "/projects/amazon-redesign-thinking.webp",
-    "link": "https://amazon-front-gamma.vercel.app"
+    "name": "Lucid Locations",
+    "description": "Connecting film production studios with locations for their shoots.",
+    "urlImg": "/projects/lucidlocations.png",
+    "link": "https://lucidlocations.com"
   }
 ]

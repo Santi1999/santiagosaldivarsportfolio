@@ -1,41 +1,28 @@
 [
   {
     "id": 1,
-    "title": "Landing Page",
-    "price": 75,
-    "description": "Perfect for businesses looking for a professional online presence.",
+    "title": "Professional IT Assistance",
+    "price": 500,
+    "description": "Perfect for small businesses and individuals looking for tech help",
     "benefits": [
-      "High-quality code",
       "Fully responsive design",
       "SEO-optimized structure",
-      "Fast loading speed",
-      "1 free extra revision after launch"
-    ]
-  },
-  {
-    "id": 2,
-    "title": "E-Commerce",
-    "price": 225,
-    "description": "Ideal for selling products online with security and ease.",
-    "benefits": [
-      "High-quality code",
-      "Fully responsive online store",
-      "Secure payment gateway integration",
-      "Product management system",
+      "Research and implementation of best practices",
+      "Custom domain and hosting setup",
+      "Content management system integration",
       "Ongoing support and maintenance"
     ]
   },
   {
-    "id": 3,
-    "title": "E-Commerce + Admin Dashboard",
-    "price": 325,
-    "description": "Perfect for businesses that want full control over their online store.",
+    "id": 2,
+    "title": "Professional Development Assistance",
+    "price": "~",
+    "description": "Inquire for Price: For startups and business looking to create impactful tech solutions",
     "benefits": [
       "High-quality code",
-      "Fully responsive online store",
-      "Secure payment gateway integration",
-      "Custom admin dashboard",
-      "Advanced analytics and reporting",
+      "Machine Learning integration",
+      "Research and implementation of best practices",
+      "Consultation on tech stack and architecture",
       "Ongoing support and maintenance"
     ]
   }

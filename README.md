@@ -1,37 +1,37 @@
 # Portfolio Demo 1
 
-Esta es una plantilla de portafolio para Desarrollador Web creada usando Astro y TailwindCSS, desarrollada aprovechando las características del Server Side Rendering (SSR) de Astro con el adaptador de Vercel y envío de emails con Resend.
+This is a Web Developer portfolio template built using Astro and TailwindCSS, leveraging Astro's Server-Side Rendering (SSR) with the Vercel adapter and email delivery using Resend.
 
-## Estadísticas
+## Statistics
 
-<table style="width: 100%">
-  <td>
-    <img src="./public/previews/stats.jpg" alt="..." height="200" width="260">
-  </td>
-</table>
+![Statistics](./public/previews/stats.jpg)
 
-## Características
+## Features
 
-1. Envío de emails con Resend y generación de plantillas con Handlebars
-2. Server Side Rendering con Vercel
-3. Animaciones con Motion
-4. Modo oscuro
+1. Email delivery with Resend and template generation using Handlebars
+2. Server-Side Rendering with Vercel
+3. Animations with Motion
+4. Dark mode
 
-## Dependencias
+## Dependencies
 
-- Astro v5.2.5
-- Astro Vercel Adapter v8.0.6
-- TailwindCSS v4.0.5
-- Motion v12.0.5
-- Resend v4.1.2
-- Handlebars 4.7.8
+- **Astro** v5.2.5
+- **Astro Vercel Adapter** v8.0.6
+- **TailwindCSS** v4.0.5
+- **Motion** v12.0.5
+- **Resend** v4.1.2
+- **Handlebars** 4.7.8
 
-## ¿Cómo levantar el proyecto?
+## How to Run the Project?
 
-1. Clona el repositorio `https://github.com/ThemeMarket/portfolio-demo-1.git`.
-2. Dirígete hacia la carpeta del proyecto `cd portfolio-demo-1`.
-3. Instala las dependencias `npm install`
-4. Levanta el servidor de desarrollo `npm run dev`
+1. Clone the repository:  
+   `git clone https://github.com/ThemeMarket/portfolio-demo-1.git`
+2. Navigate to the project directory:  
+   `cd portfolio-demo-1`
+3. Install dependencies:  
+   `npm install`
+4. Start the development server:  
+   `npm run dev`
 
 ## Previews
 
