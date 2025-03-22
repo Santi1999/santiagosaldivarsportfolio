@@ -1,4 +1,4 @@
-# Portfolio Demo 1
+# Santiago Saldivar Portfolio
 
 This is a Web Developer portfolio template built using Astro and TailwindCSS, leveraging Astro's Server-Side Rendering (SSR) with the Vercel adapter and email delivery using Resend.
 
