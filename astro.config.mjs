@@ -2,6 +2,18 @@ import { defineConfig, envField } from "astro/config"
 import tailwindcss from "@tailwindcss/vite"
 import vercel from "@astrojs/vercel"
 
+const SERVER_PORT = 3000;
+const SERVER_PORT = `http://localhost:${SERVER_PORT}`;
+const LIVE_URL = "https://santiagosaldivar.com"
+
+const SCRIPT = process.env.npm_lifescycle_script || "";
+const isBuild = SCRIPT.includes("astro build");
+let BASE_URL = LOCALHOST
+
+if (isBuild) {
+  BASE_URL = LIVE_URL;
+
+
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
@@ -14,6 +26,6 @@ export default defineConfig({
   },
   output: "server",
   adapter: vercel(),
-  site: "santiagosaldivar.com",
+  site: BASE_URL,
   base: "/santiagosaldivarsportfolio"
 })
