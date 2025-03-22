@@ -14,4 +14,6 @@ export default defineConfig({
   },
   output: "server",
   adapter: vercel(),
+  site: "santiagosaldivar.com",
+  base: "santiagosaldivarsportfolio"
 })
