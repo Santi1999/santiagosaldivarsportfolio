@@ -4,11 +4,11 @@ import vercel from "@astrojs/vercel"
 
 const SERVER_PORT = 3000;
 const SERVER_PORT = `http://localhost:${SERVER_PORT}`;
-const LIVE_URL = "https://santiagosaldivar.com"
+const LIVE_URL = "https://santiagosaldivar.com";
 
 const SCRIPT = process.env.npm_lifescycle_script || "";
 const isBuild = SCRIPT.includes("astro build");
-let BASE_URL = LOCALHOST
+let BASE_URL = LOCALHOST;
 
 if (isBuild) {
   BASE_URL = LIVE_URL;
