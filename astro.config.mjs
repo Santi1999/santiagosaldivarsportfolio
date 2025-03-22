@@ -27,4 +27,5 @@ export default defineConfig({
   adapter: vercel(),
   site: BASE_URL,
   base: "/",
+  outDir: "dist/",
 })
