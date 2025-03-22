@@ -2,10 +2,6 @@
 
 This is a Web Developer portfolio template built using Astro and TailwindCSS, leveraging Astro's Server-Side Rendering (SSR) with the Vercel adapter and email delivery using Resend.
 
-## Statistics
-
-![Statistics](./public/previews/stats.jpg)
-
 ## Features
 
 1. Email delivery with Resend and template generation using Handlebars
@@ -32,14 +28,3 @@ This is a Web Developer portfolio template built using Astro and TailwindCSS, le
    `npm install`
 4. Start the development server:  
    `npm run dev`
-
-## Previews
-
-<table style="width: 100%">
-  <tr>
-    <td style="width: 25%"><img src="./public/previews/1.png" alt="..."></td>
-    <td style="width: 25%"><img src="./public/previews/2.png" alt="..."></td>
-    <td style="width: 25%"><img src="./public/previews/3.png" alt="..."></td>
-    <td style="width: 25%"><img src="./public/previews/4.png" alt="..."></td>
-  </tr>
-</table>
