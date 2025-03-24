@@ -1,0 +1,57 @@
+---
+const stack = [
+  { name: "Astro", img: "/logos/astro.svg" },
+  { name: "React", img: "/logos/react.svg" },
+  { name: "TypeScript", img: "/logos/typescript.svg" },
+  { name: "Python", img: "/logos/python.svg" },
+  { name: "Django", img: "/logos/django.svg" },
+  { name: "PostgreSQL", img: "/logos/postgresql.svg" },
+  { name: "Go", img: "/logos/go.svg"},
+  { name: "Html", img: "/logos/html.svg"},
+  { name: "MongoDb", img: "/logos/mongodb.svg"}
+
+
+];
+---
+
+<style>
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .scrolling-wrapper {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+  }
+
+  .scrolling-content {
+    display: flex;
+    gap: 4rem;
+    animation: scroll 20s linear infinite;
+  }
+
+</style>
+
+<div class="scrolling-wrapper">
+  <div class="scrolling-content">
+    {stack.concat(stack).map(({ name, img }, i) => (
+      <img
+        src={img}
+        alt={name}
+        class="h-12 w-auto opacity-80 hover:opacity-100 transition duration-300"
+        key={i}
+      />
+    ))}
+  </div>
+</div>
+
+
+
+ 

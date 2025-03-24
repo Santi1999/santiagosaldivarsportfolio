@@ -1,4 +1,5 @@
 import { defineConfig, envField } from "astro/config"
+import react from "@astrojs/react"
 import tailwindcss from "@tailwindcss/vite"
 import vercel from "@astrojs/vercel"
 
@@ -15,4 +16,5 @@ export default defineConfig({
   output: "server",
   adapter: vercel(),
   site: "https://santiagosaldivar.com",
+  integrations: [react()],
 })

@@ -8,6 +8,7 @@ import EXPERIENCES from "../assets/collections/experiences.json";
 import PROJECTS from "../assets/collections/projects.json";
 import SERVICES from "../assets/collections/services.json";
 import HireServiceModal from "../components/HireServiceModal.astro";
+import StackSlider from "../components/StackSlider.astro";
 ---
 
 <Layout>
@@ -74,6 +75,11 @@ import HireServiceModal from "../components/HireServiceModal.astro";
         </div>
       </div>
     </article>
+  </section>
+  <section id="about" class="flex flex-col">
+    <h2 class="text-1xl md:text-4xl font-bold text-gray-950 dark:text-white mb-8">Tech Stack</h2>
+
+    <StackSlider />
   </section>
   <section id="about" class="flex flex-col">
     <h2
