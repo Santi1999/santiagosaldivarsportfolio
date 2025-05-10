@@ -1,6 +1,18 @@
 [
   {
-    "name": "GovGlance",
+    "name": "Things to Do in The Hamptons",
+    "description": "A curated platform aggregating events from local businesses and popular venues in the Hamptons, providing a clean, ad-free experience to discover activities.",
+    "urlImg": "/projects/thingstodointhehamptons.png",
+    "link": "https://thingstodointhehamptons.com"
+  },
+  {
+    "name": "Lucid Locations",
+    "description": "Marketplace connecting property owners with film studios, production teams, and content creators seeking unique locations for shoots, events, and media content.",
+    "urlImg": "/projects/lucidlocations.png",
+    "link": "https://lucidlocations.com"
+  },
+  {
+    "name": "Gov Glance",
     "description": "Centralized official government information across all branches, departments, and agencies. Empowering citizens with access to information.",
     "urlImg": "/projects/gov_glance.png",
     "link": "https://govglance.org/"
@@ -16,11 +28,5 @@
     "description": "Finding cheap gas powered by machine learning",
     "urlImg": "/projects/topoff_ai.png",
     "link": "https://topoff.ai"
-  },
-  {
-    "name": "Lucid Locations",
-    "description": "Connecting film production studios with locations for their shoots.",
-    "urlImg": "/projects/lucidlocations.png",
-    "link": "https://lucidlocations.com"
   }
 ]
