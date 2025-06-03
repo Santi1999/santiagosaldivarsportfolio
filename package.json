@@ -13,6 +13,7 @@
     "@astrojs/react": "^4.2.1",
     "@astrojs/vercel": "^8.0.4",
     "@tailwindcss/vite": "^4.0.5",
+    "@vercel/analytics": "^1.5.0",
     "framer-motion": "^12.5.0",
     "handlebars": "^4.7.8",
     "motion": "^12.5.0",
