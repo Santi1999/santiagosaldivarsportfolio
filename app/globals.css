@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+/* Tailwind v4's default dark variant is `@media (prefers-color-scheme: dark)`
+   — with no override, the `dark:` classes sprinkled through this codebase
+   (Navbar, Placeholder, the project page) would activate for anyone with a
+   dark OS regardless of where they left the dial. Dark here is the dial's
+   business and nothing else's, so `dark:` is pinned to the attribute the
+   dial sets once it passes the halfway point. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  /* The no-JS / no-oklch fallback, and the exact colors the dial reproduces
+     at t=0 — see the endpoint constants in lib/themeDial.ts. */
+  --background: rgb(252, 250, 248);
+  --foreground: #171717;
+  /* Height of the sticky navbar. The navbar sets its own height from this,
+     and full-screen sections subtract it, so a hero can end exactly on the
+     fold without the two values drifting apart. */
+  --nav-h: 4.75rem;
+  /* Uniform inset from the screen edge. Every surface — the header, page
+     sections, and full-width artwork — reads from this single value so
+     they share one vertical line at every breakpoint. */
+  --gutter: 15px;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --nav-h: 5.25rem;
+  }
+}
+
+/* ---------------------------------------------------------------------- *
+   THE THEME DIAL
+
+   The knob's entire state is --theme-t (0 light, 1 dark) plus --theme-hue
+   (which ramp the current trip is on). The component writes only those two;
+   every color, and the knob's own rotation, is derived from them here. That
+   is deliberate — one number means background and text cannot disagree
+   about where the dial is, and the transition below animates that single
+   number rather than trying to keep several colors in step.
+
+   The curves are the CSS twin of the functions in lib/themeDial.ts. Keep
+   them identical: scripts/verify-dial-contrast.mjs proves the contrast
+   floor against the TS side, so the proof only covers this file for as long
+   as the two agree.
+ * ---------------------------------------------------------------------- */
+
+/* Registering these gives them an interpolable type. An unregistered custom
+   property is just a token stream with no notion of "halfway", so the
+   transition below could only ever jump-cut it. */
+@property --theme-t {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+@property --theme-hue {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 58;
+}
+/* Registered too, so each substitutes as a resolved number rather than
+   nesting another calc() into whatever reads it. */
+@property --flip {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+@property --fg-l {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0.205;
+}
+
+:root[data-theme] {
+  /* 0 below the flip band, 1 above it. This is the crossover: the moment the
+     text stops being darker than the page and starts being lighter. It has
+     to happen somewhere, and at the exact crossing the two are necessarily
+     the same lightness — so it is confined to this narrow band, and the
+     dial snaps out of the band on release. You can turn through it; you
+     cannot come to rest in it. */
+  --flip: clamp(0, calc((var(--theme-t) - 0.45) / 0.1), 1);
+
+  /* Background and text lightness, each two lines mixed by --flip. */
+  --bg-l: calc(
+    (0.986 - 0.12 * var(--theme-t)) + (0.333 - 0.178 * var(--theme-t) - (0.986 - 0.12 * var(--theme-t))) *
+      var(--flip)
+  );
+  --fg-l: calc(
+    (0.205 + 0.478 * var(--theme-t)) + (0.493 + 0.467 * var(--theme-t) - (0.205 + 0.478 * var(--theme-t))) *
+      var(--flip)
+  );
+
+  /* Text chroma. The min() is the sRGB gamut ceiling — how much color a hue
+     can hold is almost entirely a function of its lightness, rising off
+     black and falling to nothing at white. Asking past the ceiling does not
+     fail loudly; the browser clips, which pins the color to the gamut wall
+     and quietly changes its lightness, taking the contrast guarantee with
+     it. The pow() term is a fattened parabola: color arrives as soon as you
+     start turning and drains away only at the very ends, so t=0 is true
+     black and t=1 is true white. */
+  --fg-c: calc(
+    0.85 * min(0.22 * var(--fg-l), 0.48 * (1 - var(--fg-l))) * pow(
+        4 * var(--theme-t) * (1 - var(--theme-t)),
+        0.45
+      )
+  );
+
+  --background: oklch(var(--bg-l) calc(0.0034 + 0.0086 * var(--theme-t)) 67.8);
+  --foreground: oklch(var(--fg-l) var(--fg-c) var(--theme-hue));
+
+  /* Scrollbars, form controls and the like follow the dial rather than the
+     OS, so they cannot end up light-on-dark once the page has turned. */
+  color-scheme: light;
+
+  /* Suppressed while the knob is actually being dragged (the component
+     toggles the attribute below) so color tracks the pointer with zero lag;
+     restored on release so the settle reads as an intentional ease. */
+  transition: --theme-t 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+:root[data-theme-turning] {
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-theme] {
+    transition-duration: 1ms;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-montserrat), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: var(--font-space-grotesk), "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
