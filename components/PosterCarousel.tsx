@@ -227,7 +227,7 @@ export default function PosterCarousel() {
               data-poster-card
               data-copy-start={copyStart}
               aria-hidden={isReal ? undefined : true}
-              className="flex w-[92%] shrink-0 flex-col gap-3 sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)] xl:w-[calc(25%-0.75rem)]"
+              className="flex w-[92%] shrink-0 flex-col gap-3 sm:w-[calc(50%-0.5rem)]"
             >
               <Link
                 href={`/projects/${project.slug}`}
@@ -251,7 +251,7 @@ export default function PosterCarousel() {
                       src={thumb}
                       alt={project.title}
                       fill
-                      sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 92vw"
+                      sizes="(min-width: 640px) 50vw, 92vw"
                       className="object-cover"
                     />
                   ) : (
