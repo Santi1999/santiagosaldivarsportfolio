@@ -120,12 +120,14 @@ export default function Navbar() {
             instead paints the dial above the glass by plain source order. */}
         <ThemeDial />
 
-        <Link
-          href="#contact"
+        <a
+          href="https://varsastudio.com/contact"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex min-h-11 w-fit items-center justify-self-center text-xs font-medium sm:text-sm"
         >
           Contact
-        </Link>
+        </a>
 
         <button
           type="button"
